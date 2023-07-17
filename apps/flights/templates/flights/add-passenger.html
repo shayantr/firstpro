@@ -1,0 +1,11 @@
+{% extends 'flights/layout.html' %}
+
+
+{% block body %}
+<form action="{% url 'flights:add_passenger' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+
+{% endblock %}

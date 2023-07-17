@@ -1,0 +1,16 @@
+{% extends 'etask/layout.html' %}
+
+{% block header %}
+<title> All tasks </title>
+{% endblock %}
+
+{% block body %}
+  <h1>List of my tasks</h1>
+  <ul>
+    {% for task in tasks %}
+      <li>{{ task }}</li>
+    {% empty %}
+      <li>NO TASK</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'flights/layout.html' %}
+
+{% block body %}
+    <h1>PASSENGERS LIST</h1>
+    <ul>
+    {% for passenger in passengers %}
+    <li>{{ passenger }}
+        <a href="{% url 'flights:passenger' passenger.id %}">VIEW</a>
+        <a href="{% url 'flights:edit_passenger' passenger.id %}">EDIT</a></li>
+    {% endfor %}
+    </ul>
+    <h2><a href="{% url 'flights:add_passenger' %}">ADD A PASSENGER</a></h2>
+{% endblock %}

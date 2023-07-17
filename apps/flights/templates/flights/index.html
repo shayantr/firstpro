@@ -1,0 +1,17 @@
+{% extends "flights/layout.html" %}
+
+
+{% block body %}
+<h2><a href="{% url 'flights:add' %}">CREATE A FLIGHT</a></h2>
+<h2><a href="{% url 'flights:passengers' %}">PASSENGERS</a></h2>
+<ul>
+    {% for flight in flights %}
+        <li>FLIGHT {{ flight }} <a href=" {% url 'flights:flight' flight.id %}">View</a>
+            <a href="{% url 'flights:edit' flight.id %}">Edit</a>
+            <a href="{% url 'flights:delete' flight.id %}">delete</a>
+        </li>
+    {% empty %}
+    <li>NO FLIGHTS AVAILABLE AT THIS MOMENT</li>
+    {% endfor %}
+</ul>
+{% endblock %}
